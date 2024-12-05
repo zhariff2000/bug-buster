@@ -22,7 +22,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django-prometheus'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'DockerDevops',
     'corsheaders',
+    'django_prometheus',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +84,7 @@ DATABASES = {
         'PORT': os.environ.get('3306'),
     }
 }
-
+# DATABASES = { 'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / "db.sqlite3", } }
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
