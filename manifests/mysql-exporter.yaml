@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql-exporter
+  labels:
+    app: mysql-exporter
 spec:
   replicas: 1
   selector:
@@ -14,9 +16,10 @@ spec:
     spec:
       containers:
       - name: mysql-exporter
-        image: prom/mysqld-exporter
+        image: quay.io/prometheus/mysqld-exporter:latest
+        args:
+          - "--mysqld.username=test"
+          - "--mysqld.password=test"
+          - "--mysqld.address=mysql-service:3306"
         ports:
         - containerPort: 9104
-        env:
-        - name: DATA_SOURCE_NAME
-          value: "<mysql-user>:<mysql-password>@(localhost:3306)/"
