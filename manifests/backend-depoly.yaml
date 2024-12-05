@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-deployment
-        image: ariwesi/backend:latest
+        image: ariwesi/backend:promv1
         env:
         - name: MYSQL_HOST
           value: "mysql-service"
