@@ -18,8 +18,7 @@ spec:
       - name: mysql-exporter
         image: quay.io/prometheus/mysqld-exporter:latest
         args:
-          - "--mysqld.username=test"
-          - "--mysqld.password=test"
+          - "--mysqld.username=test:test"
           - "--mysqld.address=mysql-service:3306"
         ports:
         - containerPort: 9104
