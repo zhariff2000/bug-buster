@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql-exporter
-        image: quay.io/prometheus/mysqld-exporter:latest
+        image: prom/mysqld-exporter:latest
         args:
           - "--mysqld.username=test:test"
           - "--mysqld.address=mysql-service:3306"
